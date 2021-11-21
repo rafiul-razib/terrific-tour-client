@@ -12,6 +12,8 @@ import Admin from './components/Admin/Admin';
 import Footer from './components/Footer/Footer';
 import MyOrders from './components/MyOrders/MyOrders';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import Collage from './components/Collage/Collage';
+import Video from './components/Video/Video';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
         <Switch>
           <Route exact path="/">
           <Banner></Banner>
+          <Collage></Collage>
           <AllPackages></AllPackages>
+          <Video></Video>
           </Route>
           <PrivateRoute path="/addPackage">
             <AddPackage></AddPackage>
@@ -43,7 +47,7 @@ function App() {
             <MyOrders></MyOrders>
           </Route>
           <Route path="*">
-            <NotFoundPage></NotFoundPage>>
+            <NotFoundPage></NotFoundPage>
           </Route>
         </Switch>
         <Footer></Footer>
