@@ -27,7 +27,7 @@ const ManageBooking = (props) => {
 
     const handleUpdate = (id) =>{
         const status = {"status":"Approved"}
-        fetch(`http://localhost:5000/update/${id}`,{
+        fetch(`https://secure-thicket-54115.herokuapp.com/update/${id}`,{
             method: "PUT",
             headers: {
                 "content-type" : "application/json"
