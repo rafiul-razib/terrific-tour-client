@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../hooks/useAuth';
 import Pack from '../Pack/Pack';
 
 const AllPackages = () => {
     const[packages, setPackages] = useState([]);
-    // const{setIsLoading} = useAuth()
     useEffect(()=>{
-        fetch("https://secure-thicket-54115.herokuapp.com/allPackages")
+        fetch("http://localhost:5000/allPackages")
         .then(res=> res.json())
         .then(data=>{
             setPackages(data)
         })
-        // .finally(
-        //     setIsLoading(false)
-        // )
+        .finally(
+            
+        )
     },[])
     return (
         <div className="container text-center my-4">

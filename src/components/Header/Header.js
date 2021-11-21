@@ -19,11 +19,25 @@ const Header = () => {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     
                     <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                    <Link className="nav-link" to="/adminLogin">Admin Login</Link>
-                    <Link className="nav-link" to="/myBookings">My Bookings</Link>
-                    
-                    <Link className="nav-link" to="/addPackage">Add Package</Link>
-                    <Link className="nav-link" to="/manageOrders">Admin</Link>
+                    {/* <Link className="nav-link" to="/adminLogin">Admin Login</Link> */}
+                 
+                   {
+                        user?.email &&
+                        <Link className="nav-link" to="/myBookings">My Bookings</Link>
+                        
+                    }
+
+                    {
+                        user?.email &&
+                        <Link className="nav-link" to="/addPackage">Add Package</Link>
+                       
+                    }
+                    {
+                        user?.email &&
+                        <Link className="nav-link" to="/manageOrders">Admin</Link>
+                       
+                    }
+                  
                     {
                         user?.email? 
                         <button onClick={logOut} className="btn btn-info">Log Out</button>

@@ -3,6 +3,7 @@ import ManageBooking from '../ManageBooking/ManageBooking';
 
 const Admin = () => {
     const [orders, setOrders] = useState([]);
+    const[update, setUpdate] = useState(false)
 
     useEffect(()=>{
         fetch("https://secure-thicket-54115.herokuapp.com/admin/allBookings")
@@ -10,7 +11,7 @@ const Admin = () => {
         .then(data => {
             setOrders(data)
         })
-    },[])
+    },[update])
     
     return (
         <div className="container">
@@ -30,7 +31,12 @@ const Admin = () => {
                 </thead>
                 <tbody>
                 {
-                    orders.map(order => <ManageBooking key={order._id} order= {order} setOrders={setOrders} orders={orders}></ManageBooking>)
+                    orders.map(order => <ManageBooking 
+                        key={order._id} 
+                        order= {order} 
+                        setOrders={setOrders} 
+                        setUpdate={setUpdate}
+                        orders={orders}></ManageBooking>)
                 }
                 </tbody>
             </table>

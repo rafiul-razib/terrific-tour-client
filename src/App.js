@@ -29,9 +29,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/pack/:id">
+          <PrivateRoute path="/pack/:id">
             <PackDetails></PackDetails>
-          </Route>
+          </PrivateRoute>
           <Route path="/manageOrders">
             <Admin></Admin>
           </Route>
