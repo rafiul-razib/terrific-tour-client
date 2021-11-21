@@ -11,6 +11,7 @@ import PackDetails from './components/PackDetails/PackDetails';
 import Admin from './components/Admin/Admin';
 import Footer from './components/Footer/Footer';
 import MyOrders from './components/MyOrders/MyOrders';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 function App() {
   return (
@@ -37,6 +38,12 @@ function App() {
           </Route>
           <Route path="/myBookings">
             <MyOrders></MyOrders>
+          </Route>
+          <Route path="/myBookings">
+            <MyOrders></MyOrders>
+          </Route>
+          <Route path="*">
+            <NotFoundPage></NotFoundPage>>
           </Route>
         </Switch>
         <Footer></Footer>
